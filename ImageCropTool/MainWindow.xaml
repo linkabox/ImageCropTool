@@ -1,0 +1,27 @@
+﻿<Window x:Class="ImageCropTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageCropTool"
+        mc:Ignorable="d"
+        Title="ImageCropTool" Height="484.92" Width="696.596" ResizeMode="CanMinimize" Closed="Window_Closed">
+    <Grid Margin="0,0,4,4">
+        <GroupBox Header="预览" HorizontalAlignment="Left" Margin="402,10,0,0" VerticalAlignment="Top" Height="216" Width="257">
+            <Image x:Name="imgShow" Margin="0" RenderTransformOrigin="0.766,0.482"/>
+        </GroupBox>
+        <GroupBox Header="路径" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="179" Width="387">
+            <ListBox x:Name="lstImage" SelectionMode="Single" AllowDrop="True" Margin="2" Drop="lstIamge_Drop" SelectionChanged="lstImage_SelectionChanged" KeyDown="LstImage_OnKeyDown"/>
+        </GroupBox>
+        <Button x:Name="clearBtn" Content="清空文件列表" HorizontalAlignment="Left" Margin="304,197,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="OnClickClearBtn"/>
+        <Button x:Name="cropAllBtn" Content="裁剪全部" HorizontalAlignment="Left" Margin="439,239,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="OnClickCropAll"/>
+        <Button x:Name="cropSelectBtn" Content="裁剪选中" HorizontalAlignment="Left" Margin="566,239,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="OnClickCropSelection"/>
+        <ComboBox x:Name="TileSizeComboBox" HorizontalAlignment="Left" Margin="20,197,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="OnChangeTileSize">
+        </ComboBox>
+        <ProgressBar Name="cropProgressBar" HorizontalAlignment="Left" Height="22" Margin="20,237,0,0" VerticalAlignment="Top" Width="377" Maximum="1" />
+        <GroupBox Header="进度" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" Height="179" Width="387">
+            <ListBox x:Name="lstCropProgress" SelectionMode="Single" AllowDrop="True" Margin="2" Drop="lstIamge_Drop" SelectionChanged="lstImage_SelectionChanged" KeyDown="LstImage_OnKeyDown"/>
+        </GroupBox>
+        <Button x:Name="outputDirBtn" Content="打开输出目录" HorizontalAlignment="Left" Margin="194,197,0,0" VerticalAlignment="Top" Width="93" Height="30" Click="OnClickOutputDirBtn"/>
+    </Grid>
+</Window>
